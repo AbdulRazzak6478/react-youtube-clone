@@ -46,3 +46,22 @@
   background-color:rgb(223, 169, 169);
   border-radius: 5px;
 }
+@media (max-width:767px) {
+  
+  .set-menu-bar{
+    display: none;
+  }
+  .set-menu{
+    display: block;
+  }
+}
+@media (max-width:500px) {
+  
+ .related-videos-set{
+    display: flex;
+    flex-direction: column;
+ }
+ .set-list{
+  width: 100%;
+ }
+}

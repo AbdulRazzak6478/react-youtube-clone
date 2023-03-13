@@ -21,16 +21,19 @@ const Header = () => {
 
   const searchQueryHandler = (events) => {
     if (
-      (events?.key === "Enter" || events === "searchButton") &&
+      (events?.key === "Enter") &&
       searchQuery?.length > 0
     ) {
       navigate(`/searchResult/${searchQuery}`);
       return;
     }
+  };
+  const onClickHandler=(events)=>{
     if (searchQuery?.length > 0) {
       navigate(`/searchResult/${searchQuery}`);
     }
-  };
+    
+  }
   const mobileMenuToggle = () => {
     setMobileMenu(!mobileMenu);
   };
@@ -47,7 +50,7 @@ const Header = () => {
             onClick={mobileMenuToggle}
           >
             {mobileMenu ? (
-              <CgClose className="text-white text-xl" />
+              <CgClose className="text-white text-xl " />
             ) : (
               <SlMenu className="text-white text-xl" />
             )}
@@ -77,7 +80,7 @@ const Header = () => {
         </div>
         <button
           className="w-[40px] md:w-[60px] h-8 md:h-8 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]"
-          onClick={searchQueryHandler}
+          onClick={onClickHandler}
         >
           <IoIosSearch className="text-white text-xl" />
         </button>

@@ -9,7 +9,7 @@ import SearchResultVideoCard from "./SearchResultVideoCard";
 const SearchResult = () => {
   const [result, setResult] = useState();
   const { searchQuery } = useParams();
-  const { setLoading } = useContext(Context);
+  const { setLoading,mobileMenu } = useContext(Context);
 
   useEffect(() => {
     document.getElementById("root").classList.remove("custom-h");
@@ -27,7 +27,10 @@ const SearchResult = () => {
 
   return (
     <div className="flex flex-row h-[calc(100%-56px)]">
+      <div className={`set-menu-bar ${mobileMenu ? "set-menu": ""}`}>
       <LeftNav />
+
+      </div>
       <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto set-scroll-bar bg-black">
         <div className="grid grid-cols-1 gap-2 p-5 ">
           {result?.map((item) => {

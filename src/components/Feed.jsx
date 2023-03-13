@@ -11,8 +11,11 @@ const Feed = () => {
   }, []);
   // console.log("SearchResults ", searchResults);
   return (
-    <div className="flex flex-row h-[calc(100%-56px)]">
+    <div className="flex flex-row h-[calc(100%-56px)] w-full">
+      <div className={`set-menu-bar ${mobileMenu ? "set-menu": ""}`}>
       <LeftNav />
+
+      </div>
       <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto set-scroll-bar bg-black">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-5">
           {!loading &&
